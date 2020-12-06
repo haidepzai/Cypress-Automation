@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 //für autocomplete
 describe('My First Test', () => {
-    it('clicks the link "type"', () => {
+    it('Basic Tests', () => {
 
       cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
       //get wie documentgetelementby

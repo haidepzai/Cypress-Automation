@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 //für autocomplete
-describe('My Second Test', () => {
-    it('Another Test', () => {
+describe('My Third Test', () => {
+    it('Checkbox and Dropdown', () => {
       cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
       
       //Checkbox

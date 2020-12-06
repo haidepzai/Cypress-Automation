@@ -1,6 +1,6 @@
 {
     "modifyObstructiveCode": true, 
-    "experimentalSourceRewriting":true, 
+    "experimentalSourceRewriting":false,
     "chromeWebSecurity": true,
     "waitAfterEaachCommand": 2000
 }

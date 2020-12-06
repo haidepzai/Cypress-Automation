@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 //für autocomplete
-describe('My Second Test', () => {
-    it('Another Test', () => {
+describe('My Fourth Test', () => {
+    it('Window Alert', () => {
       cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
       
       cy.get('#alertbtn').click()
@@ -14,8 +14,7 @@ describe('My Second Test', () => {
 
       //manually trigger the event
       //window:alert is the event which get fired on alert open
-      cy.on('window:alert', (str) => {
-        
+      cy.on('window:alert', (str) => {        
         //mocha
         expect(str).to.equal('Hello , share this practice page and share your knowledge')
       }) //Das wird aufgerufen, wenn auf #alertbtn geklickt wurde
@@ -27,6 +26,15 @@ describe('My Second Test', () => {
         //mocha
         expect(str).to.equal('Hello , Are you sure you want to confirm?')
       })
+
+      //Cypress unterstützt nicht Child Windows.
+      //Lösung: target Attribut im DOM löschen, damit Window im gleichen Fenster öffnet.
+
+      //invoke ruft Methode auf
+      //in dem Fall removeAttr, welche eine jQuery Funktion ist
+      cy.get('#opentab').invoke('removeAttr', 'target').click()
+      cy.url().should('include', 'rahulshettyacademy')
+      cy.go('back')
 
     })
   })
