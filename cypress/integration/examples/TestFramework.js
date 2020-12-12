@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 //für autocomplete
 
-import HomePage from '../pageObjects/HomePage'
+import HomePage from '../../support/pageObjects/HomePage'
 
 describe('Framework Test', () => {
 
@@ -22,7 +22,8 @@ describe('Framework Test', () => {
     it('Fetch Data from Fixture', function() {
         const homePage = new HomePage()
      
-        cy.visit('https://rahulshettyacademy.com/angularpractice')
+        //url in env (key) definiert in cypress.json
+        cy.visit(Cypress.env('url')+"angularpractice/") 
 
         //Design Pattern 3
         //Funktionen auslagern
@@ -34,8 +35,8 @@ describe('Framework Test', () => {
         homePage.getEditBox().should('have.attr', 'minlength', '2')
         homePage.getEntrepreneur().should('be.disabled')
         
-        cy.pause()
-
+        //cy.pause()
+        Cypress.config('defaultCommandTimeout', 8000)
         //Shop
         homePage.getShopTab().click()
 
@@ -61,6 +62,17 @@ describe('Framework Test', () => {
             .then((text) => {
                 const totalAsNumber = parseInt(text.substring(3))
                 expect(totalAsNumber).to.equal(sum)
+        })
+
+        cy.contains('Checkout').click()
+        cy.get('#country').type('India')
+        cy.get('.suggestions > ul > li > a').click()
+        cy.get('#checkbox2').click({force: true})
+        cy.get('input[type="submit"]').click()
+        //cy.get('.alert').should('have.text', "Success! Thank you! Your order will be delivered in next few weeks :-).")
+        cy.get('.alert').then(function(element) {
+            const actualText = element.text()
+            expect(actualText.includes("Success")).to.be.true
         })
     })
   })

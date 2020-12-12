@@ -6,14 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:run": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cy2:run": "cypress run --record --key 5f18dc88-0705-4093-b6b1-9e6fbe469017",
+    "mochawesome": "cypress run --reporter mochawesome"
   },
   "keywords": [
     "tut"
   ],
   "author": "hai",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^6.0.1"
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^6.1.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1"
   }
 }
