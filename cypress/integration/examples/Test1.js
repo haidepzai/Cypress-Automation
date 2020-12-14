@@ -29,14 +29,15 @@ describe('My First Test', () => {
       //cy.log(logo.text()) //Error
 
       //Promise (then) muss hier gemacht werden
-      //Manuel Resolving of Promise
-      //Weil das in einer Variable gespeichert werden
+      //Manual Resolving of Promise
+      //Weil das in einer Variable gespeichert wird
       //Oben ist zwar auch Promise, aber hidden 
       //(wird von Cypress im Hintergrund aufgeführt)
       cy.get('.brand').then(function(logoelement)
       {
           cy.log(logoelement.text())
       })
+      
       //das geht auch nicht, da text() kein cypress command ist
       //cy.get('.brand').text()
       //text() ist ein jQuery Methode (Cypress unterstützt jQuery)
