@@ -12,6 +12,7 @@ describe('My Fifth Test', () => {
         if(text.includes("Python")){
 
           //next auf get anwenden und nicht auf $el.text, da Promise schon resolved
+          //next: Geschwister Element selektieren.
           cy.get('tr td:nth-child(2)').eq(index).next() //eq(index) das 7. Element
             .then((price) => { //Promise resolven
 
