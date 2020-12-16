@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-12-12T10:10:47.124Z",
-    "end": "2020-12-12T10:10:58.076Z",
-    "duration": 10952,
+    "start": "2020-12-12T11:06:50.927Z",
+    "end": "2020-12-12T11:07:01.851Z",
+    "duration": 10924,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "327a06c5-6258-4545-86fd-9e15c4db4546",
+      "uuid": "7cb29b91-06d6-4c17-b082-ea098bdcd958",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\TestFramework.js",
       "file": "cypress\\integration\\examples\\TestFramework.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "598cf4c2-a768-40b6-a22b-478e14473435",
+          "uuid": "922df7c2-9bea-4ea8-99c7-37fb4e10b758",
           "title": "Framework Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Fetch Data from Fixture",
               "fullTitle": "Framework Test Fetch Data from Fixture",
               "timedOut": null,
-              "duration": 9725,
+              "duration": 9718,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "var homePage = new _HomePage[\"default\"](); //url in env (key) definiert in cypress.json\ncy.visit(Cypress.env('url') + \"angularpractice/\"); //Design Pattern 3\n//Funktionen auslagern\nhomePage.getEditBox().type(this.data.name);\nhomePage.getGender().select(this.data.gender); //check if the two-way binding field also have the name 'bob'\nhomePage.getTwoWayDataBinding().should('have.value', this.data.name); //checken ob minLength korrekt ist\nhomePage.getEditBox().should('have.attr', 'minlength', '2');\nhomePage.getEntrepreneur().should('be.disabled'); //cy.pause()\nCypress.config('defaultCommandTimeout', 8000); //Shop\nhomePage.getShopTab().click();\nthis.data.productName.forEach(function (element) {\n  cy.selectProduct(element);\n}); //Design Pattern 2\n//\"Mixin\" benutzen\n//Custom Method in support/command.js\ncy.selectProduct('Samsung Note 8'); //Checkout\ncy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link').click();\nvar sum = 0;\ncy.get('tr td:nth-child(4) > strong').each(function ($el, index, $list) {\n  sum += parseInt($el.text().substring(3));\n});\ncy.get('h3 > strong').invoke('text').then(function (text) {\n  var totalAsNumber = parseInt(text.substring(3));\n  expect(totalAsNumber).to.equal(sum);\n});\ncy.contains('Checkout').click();\ncy.get('#country').type('India');\ncy.get('.suggestions > ul > li > a').click();\ncy.get('#checkbox2').click({\n  force: true\n});\ncy.get('input[type=\"submit\"]').click(); //cy.get('.alert').should('have.text', \"Success! Thank you! Your order will be delivered in next few weeks :-).\")\ncy.get('.alert').then(function (element) {\n  var actualText = element.text();\n  expect(actualText.includes(\"Success\")).to.be[\"true\"];\n});",
               "err": {},
-              "uuid": "45a3604f-411f-405c-8925-02c9d4585916",
-              "parentUUID": "598cf4c2-a768-40b6-a22b-478e14473435",
+              "uuid": "5c8c79e6-6773-43a0-b2bf-bd4807dccdd4",
+              "parentUUID": "922df7c2-9bea-4ea8-99c7-37fb4e10b758",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "45a3604f-411f-405c-8925-02c9d4585916"
+            "5c8c79e6-6773-43a0-b2bf-bd4807dccdd4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9725,
+          "duration": 9718,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

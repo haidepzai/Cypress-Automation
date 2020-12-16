@@ -4,11 +4,11 @@
   "description": "tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules\\.bin\\cypress run",
     "cy:run": "cypress run",
     "cypress:open": "cypress open",
-    "cy2:run": "cypress run --record --key 5f18dc88-0705-4093-b6b1-9e6fbe469017",
-    "mochawesome": "cypress run --reporter mochawesome"
+    "dashboard:run": "npm run test -- --record --key 5f18dc88-0705-4093-b6b1-9e6fbe469017",
+    "mochawesome": "npm run test -- --reporter mochawesome"
   },
   "keywords": [
     "tut"
